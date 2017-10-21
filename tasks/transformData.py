@@ -4,7 +4,7 @@ from sklearn.preprocessing import Imputer
 from sklearn.preprocessing import Normalizer
 
 def loadData(path):
-    df = pd.read_csv(path)
+    df = pd.read_csv(path, na_values=-1)
     return df
 
 def extractTarget(dataFrame):
