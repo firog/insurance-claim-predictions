@@ -39,16 +39,6 @@ def missingValCounter(df):
     count = (df == -1).astype(int).sum(axis=0)
     return count
 
-def sumNans(row):
-    unique, counts = np.unique(row, return_counts=True)
-    nums = dict(zip(unique, counts))
-    try:
-        if nums[-1] > 0:
-            row["new_column" + nums[-1]] = 1
-    except:
-        pass
-    return row
-
 def dataNormalizer(array):
     normalizer = Normalizer(norm='max')
     normArray = normalizer.fit_transform(array)
